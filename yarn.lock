@@ -8772,6 +8772,11 @@ public-encrypt@^4.0.0:
     randombytes "^2.0.1"
     safe-buffer "^5.1.2"
 
+pubsub-js@^1.9.1:
+  version "1.9.1"
+  resolved "https://registry.npm.taobao.org/pubsub-js/download/pubsub-js-1.9.1.tgz?cache=0&sync_timestamp=1605253146629&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpubsub-js%2Fdownload%2Fpubsub-js-1.9.1.tgz#49f4252fca1439dcc72f0795b354e167861b004c"
+  integrity sha1-SfQlL8oUOdzHLweVs1ThZ4YbAEw=
+
 pump@^2.0.0:
   version "2.0.1"
   resolved "https://registry.npm.taobao.org/pump/download/pump-2.0.1.tgz#12399add6e4cf7526d973cbc8b5ce2e2908b3909"

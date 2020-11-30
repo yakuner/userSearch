@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
+import Pubsub from 'pubsub-js'
 // 引入axios
 import axios from 'axios'
 export default class Seacch extends Component {
     searchUsers = () => {
         return async () => {
-            const { getUsersMsg } = this.props
-            // 发送请求:获取数据传送给父组件
+               // 发送请求:获取数据传送给父组件
             // 捕获input输入框的内容
-            getUsersMsg({ firstView: false, loading: true })
+            Pubsub.publish('土豆土豆',{ firstView: false, loading: true }) 
             try {
                 const { value } = this.value
                 const user = await axios.get('https://api.github.com/search/users', { params: { q: value } })
                 const newUser = user.data.items
-                getUsersMsg({ firstView: false, loading: false, newUser})
+                Pubsub.publish('土豆土豆',{ firstView: false, loading: false, newUser})
             } catch (error) {
-                getUsersMsg({ firstView: false, loading: false, errorMsg: error.message })
+                Pubsub.publish('土豆土豆',{ firstView: false, loading: false, errorMsg: error.message })
             }
           
 

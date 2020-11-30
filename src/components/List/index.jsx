@@ -1,9 +1,28 @@
 import React, { Component } from 'react'
+import Pubsub from 'pubsub-js'
 import './index.css'
 export default class List extends Component {
+    state = {
+        firstView:true,
+        loading:false,
+        errorMsg:'',
+        newUser:[]
+    }
+    // 在页面加载完成之后订阅
+    componentDidMount(){
+        this.token = Pubsub.subscribe('土豆土豆',(msg,data)=>{
+            this.setState(data)
+        })
+    }
+    componentWillUnmount(){
+        Pubsub.unsubscribe(this.token)
+    }
     render() {
         // 加工传过来的数据
-         const {firstView, loading, errorMsg, newUser} = this.props
+        // 设置初始数据
+        // 订阅消息
+       
+         const {firstView, loading, errorMsg, newUser} = this.state
         return (
             <div className="row" >
               {  
